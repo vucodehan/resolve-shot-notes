@@ -1,0 +1,29 @@
+{
+  "name": "imagine-review-service",
+  "version": "0.1.0",
+  "description": "Background service for the Imagine Review panel in DaVinci Resolve: review notes, frame stills, take tracking, and a Cursor agent per episode.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "bin": {
+    "imagine-review": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "mcp": "node dist/mcp.js",
+    "test": "node --test \"dist/test/**/*.test.js\"",
+    "test:level": "python -m unittest tools/test_level_take.py"
+  },
+  "dependencies": {
+    "@cursor/sdk": "^1.0.37",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}

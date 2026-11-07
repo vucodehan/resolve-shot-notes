@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' file: data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+    <title>Imagine Review</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="renderer.js" defer></script>
+</head>
+<body>
+<div id="app">
+    <header class="bar">
+        <div class="brand">Imagine Review</div>
+        <div class="bar-right">
+            <span id="svcDot" class="dot" title="Service"></span>
+            <button id="testBtn" class="ghost small" title="Check every Resolve operation the panel uses on the clip under the playhead (adds nothing permanent)">Test</button>
+            <button id="pinBtn" class="ghost small" title="Keep this window above Resolve">Pin</button>
+        </div>
+    </header>
+
+    <div id="episodeRow" class="episode-row">
+        <div class="episode-text">
+            <div id="projectName" class="muted">No project</div>
+            <div id="episodeName" class="episode-name"></div>
+        </div>
+        <button id="linkBtn" class="ghost small" hidden>Link episode folder</button>
+        <button id="openFolderBtn" class="ghost small" hidden title="Open the episode folder">Folder</button>
+    </div>
+
+    <div id="authRow" class="auth-row">
+        <span id="authText" class="muted">Checking Cursor sign-in…</span>
+        <select id="modelSelect" title="Model for the repair agent" hidden></select>
+        <button id="signInBtn" class="primary small" hidden>Sign in with Cursor</button>
+    </div>
+
+    <section id="shotCard" class="card shot">
+        <div class="shot-head">
+            <span id="shotSid" class="sid">—</span>
+            <span id="shotVer" class="ver"></span>
+            <span id="shotTc" class="tc"></span>
+        </div>
+        <div id="shotLine" class="line muted">Move the playhead onto a clip.</div>
+        <div id="shotMeta" class="meta"></div>
+    </section>
+
+    <section id="composer" class="card composer">
+        <div class="seg" id="kindSeg" role="radiogroup" aria-label="What should happen">
+            <button data-kind="regenerate" class="seg-btn on k-regenerate">Regenerate</button>
+            <button data-kind="fix" class="seg-btn k-fix">Fix in edit</button>
+            <button data-kind="question" class="seg-btn k-question">Question</button>
+            <button data-kind="approve" class="seg-btn k-approve">Approve</button>
+        </div>
+        <div class="chips" id="catChips" aria-label="Category"></div>
+        <textarea id="noteText" rows="3" placeholder="What's wrong with this shot? (Ctrl+Enter to add)"></textarea>
+        <div class="composer-foot">
+            <label class="check"><input type="checkbox" id="useRange" checked> In/Out range</label>
+            <label class="check"><input type="checkbox" id="useSelection"> <span id="selLabel">Selected clips</span></label>
+            <button id="addNoteBtn" class="primary">Add note</button>
+        </div>
+    </section>
+
+    <nav class="tabs">
+        <button id="tabNotes" class="tab on">Notes <span id="notesCount" class="count"></span></button>
+        <button id="tabChat" class="tab">Chat <span id="busyDot" class="dot busy" hidden></span></button>
+    </nav>
+
+    <section id="notesView" class="view">
+        <div class="notes-tools">
+            <select id="notesFilter" aria-label="Show">
+                <option value="active">Open and in progress</option>
+                <option value="all">All notes</option>
+                <option value="done">Accepted and closed</option>
+            </select>
+            <button id="importBtn" class="ghost small" title="File review-colored markers already on the timeline">Import markers</button>
+            <button id="sendAllBtn" class="primary small">Send open notes to Cursor</button>
+        </div>
+        <div id="notesList" class="notes"></div>
+    </section>
+
+    <section id="chatView" class="view" hidden>
+        <div id="chatLog" class="chat-log"></div>
+        <div class="chat-input">
+            <textarea id="chatText" rows="2" placeholder="Ask the repair agent… (Enter to send, Shift+Enter for a new line)"></textarea>
+            <div class="chat-foot">
+                <label class="check"><input type="checkbox" id="attachShot" checked> Attach current frame</label>
+                <button id="stopBtn" class="ghost small" hidden>Stop</button>
+                <button id="chatSendBtn" class="primary small">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="toast" class="toast" hidden></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+    "name": "imagine-review-panel",
+    "version": "0.1.0",
+    "description": "Imagine Review: a DaVinci Resolve Workflow Integration panel for shot review and repair with a Cursor agent",
+    "main": "main.js",
+    "private": true
+}

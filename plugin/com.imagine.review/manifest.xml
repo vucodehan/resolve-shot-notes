@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlackmagicDesign>
+    <Plugin>
+        <Id>com.imagine.review</Id>
+        <Name>Imagine Review</Name>
+        <Version>0.1.0</Version>
+        <Description>Shot-by-shot review notes, frame stills, take repair and a Cursor agent for generated films.</Description>
+        <FilePath>main.js</FilePath>
+    </Plugin>
+</BlackmagicDesign>
