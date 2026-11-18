@@ -2,13 +2,17 @@
 
 A DaVinci Resolve panel for shot notes. You mark a bad frame, a Cursor agent makes the next take, and you accept or reject it on the same timeline clip.
 
-![Four steps: write a note, an agent makes a take, load it on the clip, accept or reject.](docs/media/workflow.png)
+![The Imagine Review panel open inside DaVinci Resolve, beside the timeline. It shows the shot, take version and frame, the four actions (Regenerate, Fix in edit, Question, Approve), the issue tags and the note box.](docs/media/resolve-panel.png)
+
+*The panel docked next to the timeline in Resolve Studio, with a shot from my AI comedy series loaded. The frame, the take version and the note stay together on the clip.*
 
 ## Why it exists
 
 Notes in a chat lose the frame, the take version and the shot. This panel stores the note on the clip, with a still, and the repair comes back as a take you can flip against the old one before you accept it.
 
 ## How it works
+
+![Four steps: write a note, an agent makes a take, load it on the clip, accept or reject.](docs/media/workflow.png)
 
 ```mermaid
 sequenceDiagram
